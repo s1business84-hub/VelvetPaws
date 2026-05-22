@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Services — Velvet Paws</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐾</text></svg>" />
+</head>
+<body>
+
+  <!-- ====== NAVIGATION ====== -->
+  <nav class="navbar" id="navbar">
+    <div class="container nav-inner">
+      <a href="index.html" class="logo">
+        <span class="logo-text">Velvet Paws</span>
+        <span class="logo-tagline">Luxury Pet Boutique</span>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html" class="active">Services</a></li>
+        <li><a href="team.html">Our Team</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="contact.html" class="nav-cta">Book Now</a></li>
+      </ul>
+      <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ====== PAGE HERO ====== -->
+  <section class="page-hero">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="index.html">Home</a>
+        <span>/</span>
+        <span>Services</span>
+      </div>
+      <h1>Our Services</h1>
+      <p>Luxury care, bespoke products, and expert wellness — crafted exclusively for your pet.</p>
+    </div>
+  </section>
+
+  <!-- ====== GROOMING ====== -->
+  <section class="section-pad" style="background:var(--white);">
+    <div class="container about-grid">
+      <div class="about-text reveal-left">
+        <span class="section-label">Service 01</span>
+        <h2 class="section-title">Luxury Grooming<br/>& Spa</h2>
+        <div class="divider"></div>
+        <p style="margin-bottom:16px;">
+          Our grooming suite is a full spa experience designed for your pet's comfort and 
+          wellbeing. Every session is tailored to your pet's breed, coat type, and temperament.
+        </p>
+        <ul style="list-style:none;display:flex;flex-direction:column;gap:10px;margin-bottom:28px;">
+          <li style="font-size:0.92rem;">✅ Aromatherapy & deep-conditioning baths</li>
+          <li style="font-size:0.92rem;">✅ Breed-specific cuts & styling</li>
+          <li style="font-size:0.92rem;">✅ Nail trimming & ear cleaning</li>
+          <li style="font-size:0.92rem;">✅ Teeth brushing & coat de-shedding</li>
+          <li style="font-size:0.92rem;">✅ Blueberry facial & paw massage</li>
+        </ul>
+        <div style="display:flex;gap:16px;flex-wrap:wrap;">
+          <div style="background:var(--cream);border-radius:var(--radius);padding:14px 20px;text-align:center;">
+            <strong style="display:block;color:var(--burgundy);font-size:1.2rem;">AED 180</strong>
+            <span style="font-family:Consolas,monospace;font-size:0.68rem;letter-spacing:0.15em;opacity:0.7;">BASIC GROOM</span>
+          </div>
+          <div style="background:var(--cream);border-radius:var(--radius);padding:14px 20px;text-align:center;">
+            <strong style="display:block;color:var(--burgundy);font-size:1.2rem;">AED 320</strong>
+            <span style="font-family:Consolas,monospace;font-size:0.68rem;letter-spacing:0.15em;opacity:0.7;">FULL SPA</span>
+          </div>
+        </div>
+        <br/>
+        <a href="contact.html" class="btn btn-primary" style="margin-top:10px;">Book a Grooming Session</a>
+      </div>
+      <div class="about-img-wrap reveal-right">
+        <div class="about-img-placeholder" style="background:linear-gradient(145deg,#1C2B4A,#9C4A6F);">
+            <img src="images/cat.jpg" alt="Velvet Paws grooming" style="object-position:center top;" />
+          </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== ACCESSORIES ====== -->
+  <section class="section-pad" style="background:var(--cream);">
+    <div class="container about-grid" style="direction:rtl;">
+      <div class="about-img-wrap reveal-left">
+        <div class="about-img-placeholder" style="background:linear-gradient(145deg,#520F23,#D4B37E);">
+            <img src="images/cat.jpg" alt="Velvet Paws accessories" style="object-position:center top;" />
+          </div>
+      </div>
+      <div class="about-text reveal-right" style="direction:ltr;">
+        <span class="section-label">Service 02</span>
+        <h2 class="section-title">Bespoke<br/>Accessories</h2>
+        <div class="divider"></div>
+        <p style="margin-bottom:16px;">
+          Handcrafted with the finest materials, our accessories collection is a statement 
+          of elegance for your pet. Each piece is crafted by skilled artisans with attention 
+          to every stitch and clasp.
+        </p>
+        <ul style="list-style:none;display:flex;flex-direction:column;gap:10px;margin-bottom:28px;">
+          <li style="font-size:0.92rem;">✅ Italian leather collars & leashes</li>
+          <li style="font-size:0.92rem;">✅ Personalised name engraving</li>
+          <li style="font-size:0.92rem;">✅ Crystal & gold-plated charms</li>
+          <li style="font-size:0.92rem;">✅ Luxury pet carriers & beds</li>
+          <li style="font-size:0.92rem;">✅ Custom-fit sizing available</li>
+        </ul>
+        <a href="contact.html" class="btn btn-primary">Browse Collection</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== NUTRITION ====== -->
+  <section class="section-pad" style="background:var(--white);">
+    <div class="container about-grid">
+      <div class="about-text reveal-left">
+        <span class="section-label">Service 03</span>
+        <h2 class="section-title">Gourmet<br/>Nutrition</h2>
+        <div class="divider"></div>
+        <p style="margin-bottom:16px;">
+          We believe a healthy pet starts from the inside. Our nutrition range features 
+          carefully selected brands with natural, wholesome ingredients — no fillers, 
+          no artificial preservatives.
+        </p>
+        <ul style="list-style:none;display:flex;flex-direction:column;gap:10px;margin-bottom:28px;">
+          <li style="font-size:0.92rem;">✅ Grain-free & raw food options</li>
+          <li style="font-size:0.92rem;">✅ Breed & age-specific formulas</li>
+          <li style="font-size:0.92rem;">✅ Veterinary-approved selections</li>
+          <li style="font-size:0.92rem;">✅ Artisanal treats & supplements</li>
+          <li style="font-size:0.92rem;">✅ Free nutrition consultation on first purchase</li>
+        </ul>
+        <a href="contact.html" class="btn btn-primary">Shop Nutrition</a>
+      </div>
+      <div class="about-img-wrap reveal-right">
+        <div class="about-img-placeholder" style="background:linear-gradient(145deg,#3F2A2F,#D4B37E);">
+            <img src="images/cat.jpg" alt="Velvet Paws nutrition" style="object-position:center top;" />
+          </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== WELLNESS ====== -->
+  <section class="section-pad" style="background:var(--navy);">
+    <div class="container">
+      <div class="text-center reveal">
+        <span class="section-label" style="color:var(--gold-light);">Service 04</span>
+        <h2 class="section-title" style="color:var(--white);">Wellness & Consultation</h2>
+        <div class="divider" style="margin:18px auto 28px;"></div>
+        <p class="section-intro" style="color:rgba(248,244,239,0.7);margin:0 auto 50px;">
+          Our expert wellness team works with you to create a holistic care plan tailored 
+          to your pet's unique needs.
+        </p>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;">
+        <div class="testimonial-card reveal">
+          <div style="font-size:2.5rem;margin-bottom:14px;">🩺</div>
+          <h3 style="color:var(--gold);margin-bottom:8px;">Health Screening</h3>
+          <p style="color:rgba(248,244,239,0.75);font-size:0.9rem;">Basic health checks and recommendations in partnership with licensed veterinarians.</p>
+          <br/><strong style="color:var(--gold);">AED 150 / session</strong>
+        </div>
+        <div class="testimonial-card reveal">
+          <div style="font-size:2.5rem;margin-bottom:14px;">🧘</div>
+          <h3 style="color:var(--gold);margin-bottom:8px;">Behavioural Coaching</h3>
+          <p style="color:rgba(248,244,239,0.75);font-size:0.9rem;">One-on-one sessions with certified animal behaviour specialists for a happier pet.</p>
+          <br/><strong style="color:var(--gold);">AED 200 / session</strong>
+        </div>
+        <div class="testimonial-card reveal">
+          <div style="font-size:2.5rem;margin-bottom:14px;">💊</div>
+          <h3 style="color:var(--gold);margin-bottom:8px;">Supplement Planning</h3>
+          <p style="color:rgba(248,244,239,0.75);font-size:0.9rem;">Personalised supplement regimens to support joint health, skin, coat, and digestion.</p>
+          <br/><strong style="color:var(--gold);">AED 120 / plan</strong>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== CTA ====== -->
+  <section class="section-pad-sm" style="background:var(--burgundy);text-align:center;">
+    <div class="container reveal">
+      <span class="section-label" style="color:var(--gold-light);">Ready to Begin?</span>
+      <h2 class="section-title" style="color:var(--white);margin-bottom:18px;">
+        Book Your Pet's First<br/>Velvet Paws Experience
+      </h2>
+      <p style="color:rgba(248,244,239,0.75);margin-bottom:30px;max-width:480px;margin-left:auto;margin-right:auto;">
+        Our team is ready to welcome your beloved companion. 
+        First-time clients receive a complimentary wellness consultation.
+      </p>
+      <a href="contact.html" class="btn btn-gold">Book an Appointment</a>
+    </div>
+  </section>
+
+  <!-- ====== PET REVEAL ====== -->
+  <section class="pet-reveal-section" id="petRevealSection">
+    <div class="container">
+      <div class="pet-reveal-text reveal">
+        <span class="section-label">Luxury Awaits</span>
+        <h2 class="section-title">Your Pet's Next Favourite Day Out 🐾</h2>
+      </div>
+      <div class="pet-reveal-img">
+        <div class="pet-image-container" id="petImageContainer">
+          <img src="images/cat.jpg" alt="Happy cat at Velvet Paws" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== FOOTER ====== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <span class="logo-text">Velvet Paws</span>
+          <span class="logo-tagline">Luxury Pet Boutique</span>
+          <p>Dubai's premier destination for luxury pet care, accessories, and gourmet nutrition.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Navigate</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="team.html">Our Team</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="services.html">Luxury Grooming</a></li>
+            <li><a href="services.html">Accessories</a></li>
+            <li><a href="services.html">Nutrition</a></li>
+            <li><a href="services.html">Wellness</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="#">📍 Dubai Marina, UAE</a></li>
+            <li><a href="tel:+97141234567">📞 +971 4 123 4567</a></li>
+            <li><a href="mailto:hello@velvetpaws.ae">✉️ hello@velvetpaws.ae</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 Velvet Paws. All Rights Reserved.</p>
+        <p>Made with ❤️ for pet lovers everywhere</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

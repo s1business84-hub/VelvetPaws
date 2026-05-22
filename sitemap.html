@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sitemap — Velvet Paws</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐾</text></svg>" />
+  <style>
+    /* Sitemap-specific styles */
+    .sm-wrap {
+      background: var(--white);
+      border-radius: 12px;
+      padding: 50px 40px;
+      box-shadow: 0 8px 40px rgba(0,0,0,0.07);
+    }
+    .sm-level {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .sm-row {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .sm-node {
+      background: var(--white);
+      border: 2px solid var(--burgundy);
+      border-radius: 8px;
+      padding: 12px 20px;
+      text-align: center;
+      font-family: 'Georgia', serif;
+      font-weight: 700;
+      color: var(--burgundy);
+      min-width: 130px;
+      font-size: 0.92rem;
+      white-space: nowrap;
+      box-shadow: 0 2px 8px rgba(82,15,35,0.08);
+      transition: all 0.3s ease;
+    }
+    .sm-node:hover {
+      background: var(--burgundy);
+      color: var(--white);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(82,15,35,0.2);
+    }
+    .sm-node a {
+      color: inherit;
+      text-decoration: none;
+    }
+    .sm-node.root {
+      background: var(--gold);
+      border-color: var(--gold);
+      color: var(--dark);
+      font-size: 1.1rem;
+      padding: 16px 28px;
+      min-width: 160px;
+    }
+    .sm-node.root:hover {
+      background: var(--gold-light);
+      border-color: var(--gold-light);
+      color: var(--dark);
+    }
+    .sm-node.sub {
+      border-color: var(--blush);
+      color: var(--blush);
+      font-size: 0.8rem;
+      min-width: 110px;
+      padding: 8px 14px;
+      font-weight: 400;
+    }
+    .sm-node.sub:hover {
+      background: var(--blush);
+      color: var(--white);
+    }
+    .sm-node.db {
+      background: var(--navy);
+      border-color: var(--navy);
+      color: var(--gold);
+    }
+    .sm-node.db:hover {
+      background: #0f1d33;
+      color: var(--gold);
+    }
+    .sm-vline {
+      width: 2px;
+      height: 32px;
+      background: var(--burgundy);
+      margin: 0 auto;
+    }
+    .sm-vline.gold { background: var(--gold); }
+    .sm-vline.navy { background: var(--navy); }
+    .sm-hline-wrap {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      width: 100%;
+    }
+    /* horizontal connector */
+    .sm-children {
+      display: flex;
+      gap: 24px;
+      justify-content: center;
+      flex-wrap: wrap;
+      position: relative;
+    }
+    .sm-children::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 50%;
+      height: 2px;
+      width: calc(100% - 130px);
+      background: var(--burgundy);
+      transform: translateX(-50%);
+    }
+    .sm-child-col {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 0;
+    }
+    .sm-child-col > .sm-vline {
+      height: 24px;
+    }
+    /* sub-children */
+    .sm-sub-children {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      align-items: center;
+      margin-top: 0;
+    }
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 0.88rem;
+      color: var(--dark);
+    }
+    .legend-box {
+      width: 32px;
+      height: 20px;
+      border-radius: 4px;
+      border: 2px solid;
+      flex-shrink: 0;
+    }
+    .feature-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 30px;
+    }
+    .feature-table th {
+      background: var(--burgundy);
+      color: var(--white);
+      padding: 12px 16px;
+      text-align: left;
+      font-family: 'Consolas', monospace;
+      font-size: 0.8rem;
+      letter-spacing: 0.1em;
+    }
+    .feature-table td {
+      padding: 12px 16px;
+      border-bottom: 1px solid rgba(82,15,35,0.1);
+      font-size: 0.9rem;
+      color: var(--dark);
+    }
+    .feature-table tr:nth-child(even) td { background: var(--cream); }
+    .feature-table tr:hover td { background: rgba(212,179,126,0.1); }
+    .badge {
+      display: inline-block;
+      padding: 3px 10px;
+      border-radius: 20px;
+      font-family: 'Consolas', monospace;
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+    }
+    .badge-done { background: rgba(82,15,35,0.1); color: var(--burgundy); }
+    .badge-wip  { background: rgba(212,179,126,0.2); color: #a07030; }
+    .badge-plan { background: rgba(28,43,74,0.1); color: var(--navy); }
+  </style>
+</head>
+<body>
+
+  <!-- ====== NAVIGATION ====== -->
+  <nav class="navbar" id="navbar">
+    <div class="container nav-inner">
+      <a href="index.html" class="logo">
+        <span class="logo-text">Velvet Paws</span>
+        <span class="logo-tagline">Luxury Pet Boutique</span>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="team.html">Our Team</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="contact.html" class="nav-cta">Book Now</a></li>
+      </ul>
+      <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ====== PAGE HERO ====== -->
+  <section class="page-hero">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="index.html">Home</a>
+        <span>/</span>
+        <span>Sitemap</span>
+      </div>
+      <h1>📋 Sitemap & Project Plan</h1>
+      <p>Week 1 Deliverable — Site architecture, features list, and technology stack for Velvet Paws.</p>
+    </div>
+  </section>
+
+  <!-- ====== SITEMAP DIAGRAM ====== -->
+  <section class="section-pad" style="background:var(--cream);">
+    <div class="container">
+      <div class="text-center reveal" style="margin-bottom:50px;">
+        <span class="section-label">Deliverable 1</span>
+        <h2 class="section-title">Site Architecture Diagram</h2>
+        <div class="divider"></div>
+        <p class="section-intro">Visual representation of all pages and their relationships.</p>
+      </div>
+
+      <div class="sm-wrap reveal">
+        <!-- ROOT -->
+        <div class="sm-row" style="margin-bottom:0;">
+          <div class="sm-node root"><a href="index.html">🏠 Velvet Paws<br/><small style="font-size:0.7rem;font-weight:400;">index.html</small></a></div>
+          <div class="sm-vline gold"></div>
+
+          <!-- LEVEL 1: Main Pages -->
+          <div class="sm-children" style="gap:20px;">
+            <!-- About -->
+            <div class="sm-child-col">
+              <div class="sm-vline"></div>
+              <div class="sm-node"><a href="about.html">📖 About Us</a></div>
+              <div class="sm-vline" style="height:20px;background:var(--blush);"></div>
+              <div class="sm-sub-children">
+                <div class="sm-node sub">Our Story</div>
+                <div class="sm-node sub">Mission & Vision</div>
+                <div class="sm-node sub">Milestones</div>
+                <div class="sm-node sub">Core Values</div>
+              </div>
+            </div>
+
+            <!-- Services -->
+            <div class="sm-child-col">
+              <div class="sm-vline"></div>
+              <div class="sm-node"><a href="services.html">💎 Services</a></div>
+              <div class="sm-vline" style="height:20px;background:var(--blush);"></div>
+              <div class="sm-sub-children">
+                <div class="sm-node sub">Grooming & Spa</div>
+                <div class="sm-node sub">Accessories</div>
+                <div class="sm-node sub">Nutrition</div>
+                <div class="sm-node sub">Wellness</div>
+              </div>
+            </div>
+
+            <!-- Team -->
+            <div class="sm-child-col">
+              <div class="sm-vline"></div>
+              <div class="sm-node"><a href="team.html">👥 Our Team</a></div>
+              <div class="sm-vline" style="height:20px;background:var(--blush);"></div>
+              <div class="sm-sub-children">
+                <div class="sm-node sub">Founders</div>
+                <div class="sm-node sub">Staff Profiles</div>
+                <div class="sm-node sub">Join Our Team</div>
+              </div>
+            </div>
+
+            <!-- Contact -->
+            <div class="sm-child-col">
+              <div class="sm-vline"></div>
+              <div class="sm-node"><a href="contact.html">✉️ Contact</a></div>
+              <div class="sm-vline" style="height:20px;background:var(--blush);"></div>
+              <div class="sm-sub-children">
+                <div class="sm-node sub">Booking Form</div>
+                <div class="sm-node sub">Client Comments</div>
+                <div class="sm-node sub">Map & Location</div>
+              </div>
+            </div>
+
+            <!-- Sitemap -->
+            <div class="sm-child-col">
+              <div class="sm-vline"></div>
+              <div class="sm-node" style="border-color:var(--gold);color:var(--gold);"><a href="sitemap.html" style="color:var(--gold);">🗺️ Sitemap</a></div>
+            </div>
+          </div>
+
+          <!-- Backend / DB Layer -->
+          <div class="sm-vline navy" style="margin-top:20px;height:28px;"></div>
+          <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
+            <div class="sm-node db">⚙️ Node.js Server<br/><small style="font-size:0.7rem;opacity:0.7;">server.js</small></div>
+            <div class="sm-node db">🗄️ JSON Database<br/><small style="font-size:0.7rem;opacity:0.7;">data/comments.json</small></div>
+            <div class="sm-node db">🔌 REST API<br/><small style="font-size:0.7rem;opacity:0.7;">/api/comments</small></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Legend -->
+      <div style="display:flex;gap:24px;flex-wrap:wrap;justify-content:center;margin-top:30px;" class="reveal">
+        <div class="legend-item">
+          <div class="legend-box" style="background:var(--gold);border-color:var(--gold);"></div>
+          <span>Root / Home Page</span>
+        </div>
+        <div class="legend-item">
+          <div class="legend-box" style="background:var(--white);border-color:var(--burgundy);"></div>
+          <span>Main Pages</span>
+        </div>
+        <div class="legend-item">
+          <div class="legend-box" style="background:var(--white);border-color:var(--blush);"></div>
+          <span>Sub-sections</span>
+        </div>
+        <div class="legend-item">
+          <div class="legend-box" style="background:var(--navy);border-color:var(--navy);"></div>
+          <span>Backend / Database</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== FEATURES LIST ====== -->
+  <section class="section-pad" style="background:var(--white);">
+    <div class="container">
+      <div class="text-center reveal" style="margin-bottom:40px;">
+        <span class="section-label">Deliverable 2</span>
+        <h2 class="section-title">Features to Be Implemented</h2>
+        <div class="divider"></div>
+      </div>
+      <div class="reveal">
+        <table class="feature-table">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Feature</th>
+              <th>Page</th>
+              <th>Type</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>Responsive Navigation Bar (sticky, mobile hamburger)</td>
+              <td>All Pages</td>
+              <td>Frontend</td>
+              <td><span class="badge badge-done">✅ Done</span></td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>Hero Section with animated badge & CTA buttons</td>
+              <td>Home</td>
+              <td>Frontend</td>
+              <td><span class="badge badge-done">✅ Done</span></td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>Scroll-reveal animations (Intersection Observer)</td>
+              <td>All Pages</td>
+              <td>Frontend / JS</td>
+              <td><span class="badge badge-done">✅ Done</span></td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td>Pet image pop-up / slide-in from bottom on scroll</td>
+              <td>All Pages (Footer)</td>
+              <td>Frontend / JS</td>
+              <td><span class="badge badge-done">✅ Done</span></td>
+            </tr>
+            <tr>
+              <td>5</td>
+              <td>Marquee / ticker strip of services</td>
+              <td>Home</td>
+              <td>Frontend / CSS</td>
+              <td><span class="badge badge-done">✅ Done</span></td>
+            </tr>
+            <tr>
+              <td>6</td>
+              <td>Company profile — About Us with milestones timeline</td>
+              <td>About</td>
+              <td>Frontend</td>
+              <td><span class="badge badge-done">✅ Done</span></td>
+            </tr>
+            <tr>
+              <td>7</td>
+              <td>Services showcase with pricing</td>
+              <td>Services</td>
+              <td>Frontend</td>
+              <td><span class="badge badge-done">✅ Done</span></td>
+            </tr>
+            <tr>
+              <td>8</td>
+              <td>Founder + staff profile cards</td>
+              <td>Team</td>
+              <td>Frontend</td>
+              <td><span class="badge badge-done">✅ Done</span></td>
+            </tr>
+            <tr>
+              <td>9</td>
+              <td>Statistics counter strip</td>
+              <td>Home</td>
+              <td>Frontend / JS</td>
+              <td><span class="badge badge-done">✅ Done</span></td>
+            </tr>
+            <tr>
+              <td>10</td>
+              <td>Client testimonials section</td>
+              <td>Home</td>
+              <td>Frontend</td>
+              <td><span class="badge badge-done">✅ Done</span></td>
+            </tr>
+            <tr>
+              <td>11</td>
+              <td>Appointment / contact booking form</td>
+              <td>Contact</td>
+              <td>Frontend + Backend</td>
+              <td><span class="badge badge-done">✅ Done</span></td>
+            </tr>
+            <tr>
+              <td>12</td>
+              <td>Client comments form + display wall</td>
+              <td>Contact</td>
+              <td>Frontend + Backend</td>
+              <td><span class="badge badge-done">✅ Done</span></td>
+            </tr>
+            <tr>
+              <td>13</td>
+              <td>Node.js Express server with REST API</td>
+              <td>Backend</td>
+              <td>Backend / Node.js</td>
+              <td><span class="badge badge-done">✅ Done</span></td>
+            </tr>
+            <tr>
+              <td>14</td>
+              <td>JSON file database for storing comments</td>
+              <td>Backend</td>
+              <td>Backend / Database</td>
+              <td><span class="badge badge-done">✅ Done</span></td>
+            </tr>
+            <tr>
+              <td>15</td>
+              <td>GET /api/comments — fetch all comments</td>
+              <td>API</td>
+              <td>Backend / Node.js</td>
+              <td><span class="badge badge-done">✅ Done</span></td>
+            </tr>
+            <tr>
+              <td>16</td>
+              <td>POST /api/comments — save new comment</td>
+              <td>API</td>
+              <td>Backend / Node.js</td>
+              <td><span class="badge badge-done">✅ Done</span></td>
+            </tr>
+            <tr>
+              <td>17</td>
+              <td>POST /api/contact — save contact enquiry</td>
+              <td>API</td>
+              <td>Backend / Node.js</td>
+              <td><span class="badge badge-done">✅ Done</span></td>
+            </tr>
+            <tr>
+              <td>18</td>
+              <td>Dynamic comment loading from API on page load</td>
+              <td>Contact</td>
+              <td>Frontend / JS</td>
+              <td><span class="badge badge-done">✅ Done</span></td>
+            </tr>
+            <tr>
+              <td>19</td>
+              <td>Sitemap page with visual diagram</td>
+              <td>Sitemap</td>
+              <td>Frontend</td>
+              <td><span class="badge badge-done">✅ Done</span></td>
+            </tr>
+            <tr>
+              <td>20</td>
+              <td>Fully responsive mobile layout</td>
+              <td>All Pages</td>
+              <td>Frontend / CSS</td>
+              <td><span class="badge badge-done">✅ Done</span></td>
+            </tr>
+            <tr>
+              <td>21</td>
+              <td>Replace placeholder images with actual pet photos</td>
+              <td>All Pages</td>
+              <td>Content</td>
+              <td><span class="badge badge-wip">⏳ Pending Photos</span></td>
+            </tr>
+            <tr>
+              <td>22</td>
+              <td>MySQL database migration (optional upgrade)</td>
+              <td>Backend</td>
+              <td>Backend / Database</td>
+              <td><span class="badge badge-plan">📋 Stage 2</span></td>
+            </tr>
+            <tr>
+              <td>23</td>
+              <td>User authentication / login for admin</td>
+              <td>Backend</td>
+              <td>Backend / Security</td>
+              <td><span class="badge badge-plan">📋 Stage 2</span></td>
+            </tr>
+            <tr>
+              <td>24</td>
+              <td>Online booking calendar / scheduling system</td>
+              <td>Contact</td>
+              <td>Full-stack</td>
+              <td><span class="badge badge-plan">📋 Stage 2</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== TECH STACK ====== -->
+  <section class="section-pad" style="background:var(--cream);">
+    <div class="container">
+      <div class="text-center reveal" style="margin-bottom:40px;">
+        <span class="section-label">Deliverable 3</span>
+        <h2 class="section-title">Technology Stack</h2>
+        <div class="divider"></div>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;" class="reveal">
+        <div class="service-card" style="text-align:center;">
+          <span class="service-icon">🌐</span>
+          <h3>Frontend</h3>
+          <ul style="list-style:none;text-align:left;margin-top:12px;display:flex;flex-direction:column;gap:8px;">
+            <li style="font-size:0.9rem;">📄 <strong>HTML5</strong> — Semantic markup</li>
+            <li style="font-size:0.9rem;">🎨 <strong>CSS3</strong> — Custom properties, Grid, Flexbox, Animations</li>
+            <li style="font-size:0.9rem;">⚡ <strong>JavaScript (ES6+)</strong> — Intersection Observer, Fetch API, DOM manipulation</li>
+          </ul>
+        </div>
+        <div class="service-card" style="text-align:center;">
+          <span class="service-icon">⚙️</span>
+          <h3>Backend</h3>
+          <ul style="list-style:none;text-align:left;margin-top:12px;display:flex;flex-direction:column;gap:8px;">
+            <li style="font-size:0.9rem;">🟢 <strong>Node.js</strong> — Runtime environment</li>
+            <li style="font-size:0.9rem;">🚀 <strong>Express.js</strong> — Web framework & REST API</li>
+            <li style="font-size:0.9rem;">📦 <strong>body-parser</strong> — JSON request parsing</li>
+            <li style="font-size:0.9rem;">🔒 <strong>cors</strong> — Cross-origin resource sharing</li>
+          </ul>
+        </div>
+        <div class="service-card" style="text-align:center;">
+          <span class="service-icon">🗄️</span>
+          <h3>Database</h3>
+          <ul style="list-style:none;text-align:left;margin-top:12px;display:flex;flex-direction:column;gap:8px;">
+            <li style="font-size:0.9rem;">📋 <strong>JSON File</strong> — Stage 1 data storage (comments.json)</li>
+            <li style="font-size:0.9rem;">🔵 <strong>MySQL</strong> — Planned for Stage 2</li>
+            <li style="font-size:0.9rem;">🛠️ <strong>REST API</strong> — GET & POST endpoints</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== FOOTER ====== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <span class="logo-text">Velvet Paws</span>
+          <span class="logo-tagline">Luxury Pet Boutique</span>
+          <p>UOWD Web Development Assignment — Stage 1 Deliverable</p>
+        </div>
+        <div class="footer-col">
+          <h4>Navigate</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="team.html">Our Team</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Stack</h4>
+          <ul>
+            <li><a href="#">HTML5 / CSS3</a></li>
+            <li><a href="#">JavaScript ES6</a></li>
+            <li><a href="#">Node.js + Express</a></li>
+            <li><a href="#">JSON Database</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Deliverables</h4>
+          <ul>
+            <li><a href="sitemap.html">Sitemap Diagram ✅</a></li>
+            <li><a href="sitemap.html">Features List ✅</a></li>
+            <li><a href="sitemap.html">Tech Stack ✅</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 Velvet Paws. All Rights Reserved.</p>
+        <p>UOWD Web Development — Stage 1</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

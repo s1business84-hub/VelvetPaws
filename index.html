@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Velvet Paws — Luxury Pet Shop</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐾</text></svg>" />
+</head>
+<body>
+
+  <!-- ====== NAVIGATION ====== -->
+  <nav class="navbar" id="navbar">
+    <div class="container nav-inner">
+      <a href="index.html" class="logo">
+        <span class="logo-text">Velvet Paws</span>
+        <span class="logo-tagline">Luxury Pet Boutique</span>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="team.html">Our Team</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="contact.html" class="nav-cta">Book Now</a></li>
+      </ul>
+      <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ====== HERO ====== -->
+  <section class="hero">
+    <div class="container hero-content">
+      <div class="hero-text">
+        <div class="hero-label">Premium Pet Care Since 2019</div>
+        <h1 class="hero-title">
+          Where Every Pet<br/>Deserves <span>Luxury</span>
+        </h1>
+        <p class="hero-sub">
+          Velvet Paws is Dubai's premier pet boutique — offering bespoke grooming, 
+          curated accessories, and personalised care for your beloved companions.
+        </p>
+        <div class="hero-actions">
+          <a href="services.html" class="btn btn-primary">Explore Services</a>
+          <a href="about.html" class="btn btn-outline" style="color:rgba(248,244,239,0.85);border-color:rgba(248,244,239,0.35);">Our Story</a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-badge-ring">
+          <div class="hero-badge-inner">
+            <img src="images/cat.jpg" alt="Velvet Paws luxury cat" />
+            <div class="hero-badge-overlay">
+              <div class="hero-badge-name">Velvet<br/>Paws</div>
+              <div class="hero-badge-sub">Est. 2019 · Dubai</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-scroll">
+      <div class="scroll-line"></div>
+      <span>Scroll</span>
+    </div>
+  </section>
+
+  <!-- ====== MARQUEE STRIP ====== -->
+  <div class="intro-strip">
+    <div class="strip-track" id="stripTrack">
+      <span class="strip-item"><span class="strip-dot"></span>Luxury Grooming</span>
+      <span class="strip-item"><span class="strip-dot"></span>Premium Accessories</span>
+      <span class="strip-item"><span class="strip-dot"></span>Gourmet Pet Food</span>
+      <span class="strip-item"><span class="strip-dot"></span>Expert Consultations</span>
+      <span class="strip-item"><span class="strip-dot"></span>Wellness & Spa</span>
+      <span class="strip-item"><span class="strip-dot"></span>Custom Collars</span>
+      <span class="strip-item"><span class="strip-dot"></span>Luxury Grooming</span>
+      <span class="strip-item"><span class="strip-dot"></span>Premium Accessories</span>
+      <span class="strip-item"><span class="strip-dot"></span>Gourmet Pet Food</span>
+      <span class="strip-item"><span class="strip-dot"></span>Expert Consultations</span>
+      <span class="strip-item"><span class="strip-dot"></span>Wellness & Spa</span>
+      <span class="strip-item"><span class="strip-dot"></span>Custom Collars</span>
+    </div>
+  </div>
+
+  <!-- ====== ABOUT SNIPPET ====== -->
+  <section class="section-pad" style="background:var(--white);">
+    <div class="container about-grid">
+      <div class="about-img-wrap reveal-left">
+        <div class="about-img-placeholder">
+            <img src="images/cat.jpg" alt="Velvet Paws luxury pet" />
+          </div>
+        <div class="about-badge">
+          <strong>5+</strong>
+          <span>Years of<br/>Excellence</span>
+        </div>
+      </div>
+      <div class="about-text reveal-right">
+        <span class="section-label">Our Story</span>
+        <h2 class="section-title">Crafted for Pets<br/>Who Deserve the Best</h2>
+        <div class="divider"></div>
+        <p class="section-intro" style="margin-bottom:20px;">
+          Born from a deep love of animals, Velvet Paws was founded in 2019 with a singular vision — 
+          to bring luxury, warmth, and expert care to every pet in Dubai. We believe your pet isn't 
+          just an animal; they're family.
+        </p>
+        <p style="font-size:0.95rem;opacity:0.8;margin-bottom:30px;">
+          From hand-stitched leather collars to aromatherapy baths, every product and service at 
+          Velvet Paws is thoughtfully curated to ensure the happiest, healthiest life for your companion.
+        </p>
+        <div class="about-values">
+          <div class="value-item">
+            <h4>💛 Premium Quality</h4>
+            <p>Only the finest materials and ingredients.</p>
+          </div>
+          <div class="value-item">
+            <h4>🐾 Expert Care</h4>
+            <p>Certified groomers & veterinary partners.</p>
+          </div>
+          <div class="value-item">
+            <h4>🌿 Natural & Safe</h4>
+            <p>Chemical-free, pet-safe products only.</p>
+          </div>
+          <div class="value-item">
+            <h4>❤️ With Love</h4>
+            <p>Every interaction is built on trust.</p>
+          </div>
+        </div>
+        <br/>
+        <a href="about.html" class="btn btn-primary" style="margin-top:10px;">Discover Our Story</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== SERVICES SNIPPET ====== -->
+  <section class="section-pad" style="background:var(--cream);">
+    <div class="container">
+      <div class="text-center reveal">
+        <span class="section-label">What We Offer</span>
+        <h2 class="section-title">Our Signature Services</h2>
+        <div class="divider"></div>
+        <p class="section-intro">
+          From spa days to bespoke accessories — we have everything your pet could dream of.
+        </p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card reveal">
+          <span class="service-icon">✂️</span>
+          <h3>Luxury Grooming</h3>
+          <p>Full-service spa grooming with aromatherapy, breed-specific cuts, and premium product lines.</p>
+        </div>
+        <div class="service-card reveal">
+          <span class="service-icon">💎</span>
+          <h3>Bespoke Accessories</h3>
+          <p>Hand-crafted collars, leashes, and accessories made from Italian leather and premium fabrics.</p>
+        </div>
+        <div class="service-card reveal">
+          <span class="service-icon">🍖</span>
+          <h3>Gourmet Nutrition</h3>
+          <p>Curated selection of natural, grain-free, and vet-approved gourmet pet foods and treats.</p>
+        </div>
+        <div class="service-card reveal">
+          <span class="service-icon">🩺</span>
+          <h3>Wellness Consultation</h3>
+          <p>One-on-one wellness sessions with our expert advisors to create personalised care plans.</p>
+        </div>
+      </div>
+      <div class="text-center" style="margin-top:40px;">
+        <a href="services.html" class="btn btn-outline">View All Services</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== STATS ====== -->
+  <section class="stats-strip">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-item reveal">
+          <h3>2,500+</h3>
+          <p>Happy Clients</p>
+        </div>
+        <div class="stat-item reveal">
+          <h3>12+</h3>
+          <p>Expert Team Members</p>
+        </div>
+        <div class="stat-item reveal">
+          <h3>500+</h3>
+          <p>Premium Products</p>
+        </div>
+        <div class="stat-item reveal">
+          <h3>5 ★</h3>
+          <p>Average Rating</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== TEAM SNIPPET ====== -->
+  <section class="section-pad" style="background:var(--white);">
+    <div class="container">
+      <div class="text-center reveal">
+        <span class="section-label">Meet the Team</span>
+        <h2 class="section-title">The Hands Behind the Paws</h2>
+        <div class="divider"></div>
+      </div>
+      <div class="team-grid">
+        <div class="team-card reveal">
+          <div class="team-img">🧑‍💼</div>
+          <div class="team-body">
+            <h3>Sophia Al-Mansoori</h3>
+            <span class="team-role">Founder & CEO</span>
+            <p>A passionate animal lover with 10+ years in luxury retail who turned her dream into Dubai's finest pet boutique.</p>
+          </div>
+        </div>
+        <div class="team-card reveal">
+          <div class="team-img">👩‍⚕️</div>
+          <div class="team-body">
+            <h3>Dr. Leila Hassan</h3>
+            <span class="team-role">Head Veterinary Advisor</span>
+            <p>Licensed vet with a specialisation in companion animal nutrition and preventative wellness.</p>
+          </div>
+        </div>
+        <div class="team-card reveal">
+          <div class="team-img">💇‍♀️</div>
+          <div class="team-body">
+            <h3>Marco Villanueva</h3>
+            <span class="team-role">Master Groomer</span>
+            <p>Award-winning groomer certified in European breed standards with over 8 years of luxury grooming experience.</p>
+          </div>
+        </div>
+      </div>
+      <div class="text-center" style="margin-top:40px;">
+        <a href="team.html" class="btn btn-outline">Meet the Full Team</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== TESTIMONIALS ====== -->
+  <section class="testimonials-bg">
+    <div class="container">
+      <div class="text-center reveal">
+        <span class="section-label" style="color:var(--gold-light);">Client Love</span>
+        <h2 class="section-title" style="color:var(--white);">What Our Clients Say</h2>
+        <div class="divider" style="margin:18px auto 0;"></div>
+      </div>
+      <div class="testimonials-grid">
+        <div class="testimonial-card reveal">
+          <div class="stars">★★★★★</div>
+          <p class="testimonial-text">
+            "Velvet Paws transformed my cat Mochi's grooming experience. She came home looking 
+            like she'd been to a five-star spa. Absolutely incredible service!"
+          </p>
+          <div class="testimonial-author">
+            <div class="author-avatar">👩</div>
+            <div class="author-info">
+              <strong>Aisha Rahman</strong>
+              <span>Cat Parent · Dubai Marina</span>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card reveal">
+          <div class="stars">★★★★★</div>
+          <p class="testimonial-text">
+            "The leather collar they custom-made for Max is a work of art. I get compliments 
+            every single walk. Worth every dirham!"
+          </p>
+          <div class="testimonial-author">
+            <div class="author-avatar">👨</div>
+            <div class="author-info">
+              <strong>James O'Brien</strong>
+              <span>Dog Parent · Downtown Dubai</span>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card reveal">
+          <div class="stars">★★★★★</div>
+          <p class="testimonial-text">
+            "Dr. Leila's nutrition consultation completely changed my dog's energy levels. 
+            Velvet Paws truly cares about your pet's wellbeing."
+          </p>
+          <div class="testimonial-author">
+            <div class="author-avatar">👩</div>
+            <div class="author-info">
+              <strong>Priya Nair</strong>
+              <span>Dog Parent · JLT</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== PET REVEAL SCROLL SECTION ====== -->
+  <section class="pet-reveal-section" id="petRevealSection">
+    <div class="container">
+      <div class="pet-reveal-text reveal">
+        <span class="section-label">A Little Surprise</span>
+        <h2 class="section-title">We're Always Here for Your Pets 🐾</h2>
+        <p>Because every scroll should end with something adorable.</p>
+        <a href="contact.html" class="btn btn-gold">Book an Appointment</a>
+      </div>
+      <div class="pet-reveal-img">
+        <div class="pet-image-container" id="petImageContainer">
+          <img src="images/cat.jpg" alt="A happy cat at Velvet Paws" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== FOOTER ====== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <span class="logo-text">Velvet Paws</span>
+          <span class="logo-tagline">Luxury Pet Boutique</span>
+          <p>Dubai's premier destination for luxury pet care, accessories, and gourmet nutrition. Because your pet deserves the very best.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Navigate</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="team.html">Our Team</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="services.html">Luxury Grooming</a></li>
+            <li><a href="services.html">Accessories</a></li>
+            <li><a href="services.html">Nutrition</a></li>
+            <li><a href="services.html">Wellness</a></li>
+            <li><a href="services.html">Pet Spa</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="#">📍 Dubai Marina, UAE</a></li>
+            <li><a href="tel:+97141234567">📞 +971 4 123 4567</a></li>
+            <li><a href="mailto:hello@velvetpaws.ae">✉️ hello@velvetpaws.ae</a></li>
+            <li><a href="#">🕐 Daily 9AM – 9PM</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 Velvet Paws. All Rights Reserved.</p>
+        <p>Made with ❤️ for pet lovers everywhere</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

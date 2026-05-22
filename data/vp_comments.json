@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "name": "Aisha Rahman",
+    "pet": "Mochi",
+    "rating": 5,
+    "comment": "Velvet Paws transformed my cat Mochi's grooming experience. She came home looking like she'd been to a five-star spa. Absolutely incredible service!",
+    "date": "May 2025"
+  },
+  {
+    "id": 2,
+    "name": "James O'Brien",
+    "pet": "Max",
+    "rating": 5,
+    "comment": "The leather collar they custom-made for Max is a work of art. I get compliments every single walk. Worth every dirham!",
+    "date": "April 2025"
+  },
+  {
+    "id": 3,
+    "name": "Priya Nair",
+    "pet": "Bruno",
+    "rating": 5,
+    "comment": "Dr. Leila's nutrition consultation completely changed my dog's energy levels. Velvet Paws truly cares about your pet's wellbeing.",
+    "date": "March 2025"
+  }
+]
