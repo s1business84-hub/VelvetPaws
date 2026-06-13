@@ -6,16 +6,17 @@
       "use": "@vercel/node",
       "config": {
         "includeFiles": [
-          "*.html",
-          "css/**",
-          "js/**",
-          "images/**",
           "data/**"
         ]
       }
-    }
+    },
+    { "src": "*.html", "use": "@vercel/static" },
+    { "src": "css/**", "use": "@vercel/static" },
+    { "src": "js/**", "use": "@vercel/static" },
+    { "src": "images/**", "use": "@vercel/static" }
   ],
   "routes": [
+    { "handle": "filesystem" },
     { "src": "/api/(.*)", "dest": "server.js" }
   ]
 }
