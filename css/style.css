@@ -309,11 +309,11 @@ a:hover { color: var(--gold); }
 
 /* ---------- HERO ---------- */
 .hero {
-  min-height: 100vh;
-  background: linear-gradient(135deg, var(--navy) 0%, #2c1535 55%, var(--burgundy) 100%);
+  min-height: 80vh;
+  background: linear-gradient(135deg, #1a0404 0%, #4a0912 55%, #7a1627 100%);
   display: flex;
   align-items: center;
-  padding-top: 72px;
+  padding-top: 40px;
   position: relative;
   overflow: hidden;
 }
@@ -365,7 +365,7 @@ a:hover { color: var(--gold); }
 }
 
 .hero-title {
-  font-size: clamp(2.8rem, 6vw, 4.5rem);
+  font-size: clamp(2.2rem, 5vw, 3.8rem);
   color: var(--white);
   line-height: 1.1;
   margin-bottom: 24px;
@@ -829,7 +829,7 @@ a:hover { color: var(--gold); }
 
 /* ---------- TESTIMONIALS ---------- */
 .testimonials-bg {
-  background: linear-gradient(135deg, var(--navy) 0%, var(--burgundy) 100%);
+  background: linear-gradient(135deg, #1a0404 0%, #4a0912 55%, #7a1627 100%);
   padding: 100px 0;
 }
 
@@ -882,14 +882,19 @@ a:hover { color: var(--gold); }
 }
 
 .author-avatar {
-  width: 44px; height: 44px;
-  border-radius: 50%;
-  background: var(--blush);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.2rem;
-  flex-shrink: 0;
+  .author-avatar {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #d4b37e, #f3d9a4);
+    color: #2b0d0d;
+    font-weight: 700;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(212,179,126,0.3);
+}
 }
 
 .author-info strong {
@@ -1102,11 +1107,11 @@ a:hover { color: var(--gold); }
 }
 
 .pet-reveal-img {
-  margin-top: 40px;
+  margin-top: 20px;
   display: flex;
   justify-content: center;
   align-items: flex-end;
-  min-height: 360px;
+  min-height: 220px;
   position: relative;
 }
 
@@ -1125,7 +1130,7 @@ a:hover { color: var(--gold); }
 }
 
 .pet-image-container img {
-  max-height: 440px;
+  max-height: 250px;
   max-width: 500px;
   width: 100%;
   object-fit: contain;
@@ -1221,7 +1226,7 @@ a:hover { color: var(--gold); }
 
 /* ---------- PAGE HERO (inner pages) ---------- */
 .page-hero {
-  background: linear-gradient(135deg, var(--navy) 0%, #2c1535 55%, var(--burgundy) 100%);
+  background:linear-gradient(135deg, #1a0404 0%, #4a0912 55%, #960234 100%);
   padding: 130px 0 80px;
   text-align: center;
   position: relative;
