@@ -120,6 +120,30 @@ app.post('/api/comments', (req, res) => {
 });
 
 /* ============================================================
+   ROUTES — Awards
+   ============================================================ */
+
+/**
+ * GET /api/awards
+ * Returns all company awards
+ */
+app.get('/api/awards', (req, res) => {
+  const awardsFile = path.join(SEED_DIR, 'awards.json');
+
+  try {
+    const awards = JSON.parse(
+      fs.readFileSync(awardsFile, 'utf-8')
+    );
+
+    res.json(awards);
+  } catch (error) {
+    res.status(500).json({
+      error: 'Unable to load awards.'
+    });
+  }
+});
+
+/* ============================================================
    ROUTES — Contact / Booking
    ============================================================ */
 
