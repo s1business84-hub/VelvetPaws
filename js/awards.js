@@ -1,22 +1,43 @@
 async function loadAwards() {
-  try {
-    const response = await fetch('/api/awards');
-    const awards = await response.json();
+    try {
+        const response = await fetch('/api/awards');
+        const awards = await response.json();
 
-    const container = document.getElementById('awardsContainer');
+        const container = document.getElementById('awardsContainer');
 
-    awards.forEach(award => {
-      container.innerHTML += `
-        <div class="service-card">
-          <h3>${award.year} — ${award.title}</h3>
-          <p>${award.description}</p>
-        </div>
-      `;
-    });
+        container.innerHTML = "";
 
-  } catch (error) {
-    console.error('Failed to load awards:', error);
-  }
+        awards.forEach(award => {
+
+            container.innerHTML += `
+                <div class="award-card">
+
+                    <img src="${award.image}" alt="${award.title}">
+
+                    <div class="award-info">
+
+                        <div class="award-year">
+                            🏆 ${award.year}
+                        </div>
+
+                        <h2 class="award-title">
+                            ${award.title}
+                        </h2>
+
+                        <p class="award-description">
+                            ${award.description}
+                        </p>
+
+                    </div>
+
+                </div>
+            `;
+
+        });
+
+    } catch (error) {
+        console.error("Failed to load awards:", error);
+    }
 }
 
 loadAwards();

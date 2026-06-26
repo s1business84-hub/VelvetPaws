@@ -1,22 +1,26 @@
 [
-  {
-    "year": "2022",
-    "title": "Best Pet Care Startup",
-    "description": "Recognized for innovative pet wellness services."
-  },
-  {
-    "year": "2023",
-    "title": "Customer Choice Award",
-    "description": "Highest customer satisfaction rating."
-  },
-  {
-    "year": "2024",
-    "title": "Top Veterinary Service",
-    "description": "Awarded for excellence in veterinary care."
-  },
-  {
-    "year": "2025",
-    "title": "Pet Wellness Excellence",
-    "description": "Recognized for outstanding pet wellness programs."
-  }
+{
+    "year":"2025",
+    "title":"Pet Wellness Excellence",
+    "description":"Recognized for outstanding pet wellness programs.",
+    "image":"images/award1.jpg"
+},
+{
+    "year":"2024",
+    "title":"Top Veterinary Service",
+    "description":"Awarded for excellence in veterinary care.",
+    "image":"images/award2.jpg"
+},
+{
+    "year":"2023",
+    "title":"Customer Choice Award",
+    "description":"Highest customer satisfaction rating.",
+    "image":"images/award3.jpg"
+},
+{
+    "year":"2022",
+    "title":"Best Pet Care Startup",
+    "description":"Recognized for innovation in luxury pet care.",
+    "image":"images/award4.jpg"
+}
 ]
